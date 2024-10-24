@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: demo
+  # JSP ??? ?? view resolver ??
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  datasource:
+    url: jdbc:mysql://localhost:3306/demo_db
+    username: pgy
+    password: 0830
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  mapper-locations: classpath:sqlMapper/*.xml
+
+debug: false
+management.endpoints.web.exposure.exclude: "*"
+
+logging:
+  level:
+    kr.co.itsmart.demo: debug
+    org.springframework.web.servlet: debug
