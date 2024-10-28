@@ -1,15 +1,17 @@
 spring:
   application:
     name: demo
-  # JSP ??? ?? view resolver ??
   mvc:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
   datasource:
-    url: jdbc:mysql://localhost:3306/demo_db
-    username: pgy
-    password: 0830
+    url: jdbc:mysql://mysqlDB:3306/demo_db?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    #url: jdbc:mysql://localhost:3306/demo_db
+    username: root
+    #username: pgy
+    password: itsmart1!
+    #password: 0830
     driver-class-name: com.mysql.cj.jdbc.Driver
 mybatis:
   mapper-locations: classpath:sqlMapper/*.xml
