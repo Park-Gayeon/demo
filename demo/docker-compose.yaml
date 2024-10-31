@@ -1,4 +1,4 @@
-# version: '3'
+version: '3'
 services:
   app:
     build:
@@ -9,10 +9,11 @@ services:
     volumes:
       - .:/app # 로컬 소스 코드 디렉토리와 컨테이너의 /app 디렉토리를 동기화
       - ./src/main/webapp/WEB-INF/views:/app/src/main/webapp/WEB-INF/views # JSP 파일 동기화
+      - ./application.yaml:/src/main/resources/application.yaml
     depends_on:
       - mysqlDB
   mysqlDB:
-    image: mysql:5.7
+    image: mysql:latest
     restart: always
     container_name: 'mysqlDB'
     environment:
